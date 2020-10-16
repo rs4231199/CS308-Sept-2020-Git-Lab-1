@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	int input = atoi(in);
-	printf("Sqrt of %s%d is %f%s\n", sign, input, sqrt(input), (sign=="-" ? "i" : ""));
+	printf("NEGSUPPORT: Sqrt of %s%d is %f%s\n", sign, input, sqrt(input), (sign=="-" ? "i" : ""));
 	printf("End of program. Exiting.");
 	return(0);
 
