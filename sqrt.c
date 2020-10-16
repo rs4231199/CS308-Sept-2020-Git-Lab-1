@@ -13,17 +13,24 @@ int main(int argc, char* argv[]) {
 		exit(-1);
 	}
 
+	char* sign = "";
 	char* in = argv[1];
-	while(*in != '\0') {
-		if(*in < '0' || *in > '9') {
-			printf("Invalid input! Input must be a valid number.");
-			return(0);
-		}
+	if(*in == '-') {
+		sign = "-";
 		in++;
 	}
 
-	int input = atoi(argv[1]);
-	printf("Sqrt of %d is %f\n",input,sqrt(input));
+	char* tmp = in;
+	while(*tmp != '\0') {
+		if(*tmp < '0' || *tmp > '9') {
+			printf("Invalid input! Input must be a valid number.");
+			return(0);
+		}
+		tmp++;
+	}
+
+	int input = atoi(in);
+	printf("Sqrt of %s%d is %f%s\n", sign, input, sqrt(input), (sign=="-" ? "i" : ""));
 	printf("End of program. Exiting.");
 	return(0);
 
